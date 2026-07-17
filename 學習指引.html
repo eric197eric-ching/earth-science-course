@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>北市大暑期地球科學課程學習指引</title>
+    <style>
+        :root {
+            --primary: #2b6cb0;
+            --primary-dark: #2c5282;
+            --primary-light: #63b3ed;
+            --accent: #319795;
+            --success: #48bb78;
+            --warning: #ed8936;
+            --danger: #f56565;
+            --bg: #f7fafc;
+            --card-bg: #ffffff;
+            --text: #2d3748;
+            --text-light: #718096;
+            --border: #e2e8f0;
+            --code-bg: #f0f0f0;
+            --shadow: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-lg: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans TC", sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Header Styles */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .meta-info {
+            background: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .meta-info p {
+            margin: 5px 0;
+            opacity: 0.95;
+        }
+
+        /* Navigation */
+        .nav-sticky {
+            position: sticky;
+            top: 20px;
+            z-index: 100;
+        }
+
+        .toc {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .toc h2 {
+            color: var(--primary-dark);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .toc ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .toc li {
+            margin: 8px 0;
+            padding-left: 15px;
+            border-left: 2px solid var(--border);
+        }
+
+        .toc a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            display: block;
+            padding: 5px 0;
+        }
+
+        .toc a:hover {
+            color: var(--primary-dark);
+            transform: translateX(5px);
+        }
+
+        /* Main Content */
+        .content-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            margin-bottom: 30px;
+        }
+
+        .content-section h2 {
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            font-size: 1.5rem;
+        }
+
+        .content-section h3 {
+            color: var(--primary);
+            margin: 25px 0 15px 0;
+            font-size: 1.3rem;
+        }
+
+        .content-section h4 {
+            color: var(--primary-dark);
+            margin: 20px 0 10px 0;
+            font-size: 1.1rem;
+        }
+
+        .content-section p {
+            margin: 10px 0;
+            text-align: justify;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            padding-left: 25px;
+            margin: 15px 0;
+        }
+
+        .content-section li {
+            margin: 8px 0;
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        table, th, td {
+            border: 1px solid var(--border);
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--primary);
+            color: white;
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+
+        tr:hover {
+            background-color: #f0f4ff;
+        }
+
+        /* Blockquote */
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 15px;
+            margin: 20px 0;
+            background: #f0f9ff;
+            font-style: italic;
+            color: var(--primary-dark);
+        }
+
+        /* Code Blocks */
+        pre {
+            background: var(--code-bg);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-size: 0.9rem;
+            border-left: 3px solid var(--primary);
+        }
+
+        code {
+            background: var(--code-bg);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+
+        /* Checklist */
+        .checklist {
+            background: #f0f9ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .checklist li {
+            margin: 10px 0;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .checklist input[type="checkbox"] {
+            position: absolute;
+            left: 0;
+            top: 2px;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid;
+        }
+
+        .info-box.success {
+            background: #f0fff4;
+            border-color: var(--success);
+            color: #22543d;
+        }
+
+        .info-box.warning {
+            background: #feebc8;
+            border-color: var(--warning);
+            color: #744210;
+        }
+
+        .info-box.danger {
+            background: #fff5f5;
+            border-color: var(--danger);
+            color: #742a2a;
+        }
+
+        .info-box tip {
+            background: #f0f9ff;
+            border-color: var(--primary);
+            color: var(--primary-dark);
+        }
+
+        .info-box h4 {
+            margin-bottom: 10px;
+        }
+
+        /* Week Cards */
+        .week-card {
+            background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+            border-left: 5px solid var(--primary);
+        }
+
+        .week-card h3 {
+            color: var(--primary-dark);
+            margin-bottom: 10px;
+        }
+
+        .week-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+        }
+
+        .week-meta span {
+            background: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.2s;
+            border: none;
+            cursor: pointer;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-secondary {
+            background: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: #2c7a7b;
+        }
+
+        /* Links */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Horizontal Rule */
+        hr {
+            border: none;
+            height: 2px;
+            background: var(--border);
+            margin: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+            }
+
+            .content-section {
+                padding: 20px;
+            }
+
+            .content-section h2 {
+                font-size: 1.3rem;
+            }
+
+            .toc {
+                padding: 15px;
+            }
+
+            table {
+                font-size: 0.85rem;
+            }
+
+            th, td {
+                padding: 8px;
+            }
+        }
+
+        /* Print Styles */
+        @media print {
+            .toc {
+                display: none;
+            }
+
+            .content-section {
+                box-shadow: none;
+                border: 1px solid #ddd;
+                page-break-inside: avoid;
+            }
+
+            header {
+                background: var(--primary);
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+        }
+
+        .scroll-top:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>北市大暑期地球科學課程學習指引</h1>
+            <div class="meta-info">
+                <p><strong>課程名稱</strong>：北市大暑期地球科學課程計劃</p>
+                <p><strong>主題</strong>：地震學、地球物理學 + AI/Agent 輔助教學實作</p>
+                <p><strong>對象</strong>：中小學現職教師</p>
+                <p><strong>時程</strong>：2026/7/17 起，每週四上午，共 6 週（每次 4 小時）</p>
+                <p><strong>目標</strong>：建立地震學基礎、學會使用真實地震資料分析、完成一份可帶回學校的教學作品</p>
+            </div>
+        </header>
+
+        <!-- Table of Contents -->
+        <div class="nav-sticky">
+            <div class="toc">
+                <h2>📖 目錄</h2>
+                <ul>
+                    <li><a href="#preparation">📌 學習前的準備清單</a></li>
+                    <li><a href="#week1">📅 Week 1：課程介紹、環境設定、工具流程建立</a></li>
+                    <li><a href="#week2">📅 Week 2：地震波、加速度、地震與震度</a></li>
+                    <li><a href="#week3">📅 Week 3：P-S 波到時差、旅行時間曲線與震央定位</a></li>
+                    <li><a href="#week4">📅 Week 4：課本第 4 章精讀與真實地震波形資料</a></li>
+                    <li><a href="#week5">📅 Week 5：地震災害與防災教育</a></li>
+                    <li><a href="#week6">📅 Week 6：總結與成果展示</a></li>
+                    <li><a href="#methods">🎯 學習方法建議</a></li>
+                    <li><a href="#schedule">📅 學習時程規劃</a></li>
+                    <li><a href="#resources">📚 參考資源</a></li>
+                    <li><a href="#suggestions">💡 額外建議</a></li>
+                    <li><a href="#checklist">📝 學習檢核清單</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+
+        <!-- Preparation Section -->
+        <section id="preparation" class="content-section">
+            <h2>📌 學習前的準備清單</h2>
+            
+            <h3>✅ 硬體需求</h3>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox" id="hardware-pc"> <label for="hardware-pc"><strong>筆電/桌機</strong>：建議配備 Windows 10+ 或 macOS 10.15+，至少 8GB RAM</label></li>
+                    <li><input type="checkbox" id="hardware-phone"> <label for="hardware-phone"><strong>手機</strong>：支援地震感測的智慧型手機（iOS/Android），用於 Week 2 的地震觀測活動
+                      <ul>
+                        <li>iOS：內建加速度感測器（iPhone 6 以上即可）</li>
+                        <li>Android：需支援 <strong>加速度感測器（Accelerometer）</strong></li>
+                      </ul>
+                    </label></li>
+                    <li><input type="checkbox" id="hardware-usb"> <label for="hardware-usb"><strong>USB 感測器（可選）</strong>：若學校有 USB 地震感測器（如 <a href="https://raspberryshake.org/">Raspberry Shake</a> 或 <a href="https://www.iris.edu/hq/as-1">AS-1</a>），可帶來課堂使用</label></li>
+                    <li><input type="checkbox" id="hardware-wifi"> <label for="hardware-wifi"><strong>網路</strong>：穩定的 Wi-Fi 連線（課堂中需下載地震資料、使用雲端工具）</label></li>
+                </ul>
+            </div>
+
+            <h3>✅ 軟體需求</h3>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox" id="software-browser"> <label for="software-browser"><strong>瀏覽器</strong>：Chrome、Edge 或 Firefox（最新版本）</label></li>
+                    <li><input type="checkbox" id="software-git"> <label for="software-git"><strong>Git</strong>：<a href="https://git-scm.com/downloads">下載安裝</a>（用於版本控制）</label></li>
+                    <li><input type="checkbox" id="software-vscode"> <label for="software-vscode"><strong>VS Code</strong>：<a href="https://code.visualstudio.com/">下載安裝</a>（用於編輯程式碼）</label></li>
+                    <li><input type="checkbox" id="software-python"> <label for="software-python"><strong>Python 3.10+</strong>：<a href="https://www.python.org/downloads/">下載安裝</a>（用於資料分析）
+                      <ul>
+                        <li>建議安裝 <code>pandas</code>、<code>numpy</code>、<code>matplotlib</code> 等套件（後續會用到）</li>
+                      </ul>
+                    </label></li>
+                    <li><input type="checkbox" id="software-google"> <label for="software-google"><strong>Google 帳號</strong>：用於 Google Drive、Google Sheets、Google Form、GAS（Google Apps Script）</label></li>
+                    <li><input type="checkbox" id="software-github"> <label for="software-github"><strong>GitHub 帳號</strong>：<a href="https://github.com/join">註冊</a>（用於儲存程式碼和專案）</label></li>
+                    <li><input type="checkbox" id="software-huggingface"> <label for="software-huggingface"><strong>Hugging Face 帳號</strong>：<a href="https://huggingface.co/join">註冊</a>（用於 AI 模型和資料集）</label></li>
+                    <li><input type="checkbox" id="software-vercel"> <label for="software-vercel"><strong>Vercel 帳號</strong>：<a href="https://vercel.com/signup">註冊</a>（用於部署網頁）</label></li>
+                </ul>
+            </div>
+
+            <h3>✅ 先修知識（非必須，但有幫助）</h3>
+            <ul>
+                <li>基本的 <strong>地球科學概念</strong>（地震、板塊構造、地震波）</li>
+                <li>基本的 <strong>電腦操作</strong>（檔案管理、瀏覽器使用）</li>
+                <li>基本的 <strong>Excel/Google Sheets</strong> 使用經驗（資料分析）</li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- Week 1 -->
+        <section id="week1" class="content-section">
+            <div class="week-card">
+                <h2>📅 Week 1：課程介紹、環境設定、工具流程建立</h2>
+                <div class="week-meta">
+                    <span>📅 日期：2026/7/17</span>
+                    <span>🎯 目標：建立完整的工具環境，學會基本的地震資料平台使用</span>
+                </div>
+            </div>
+
+            <h3>🎯 重點內容</h3>
+            <ol>
+                <li>課程介紹與核心目標說明</li>
+                <li>地震學、地球物理學基礎概念</li>
+                <li>工具環境設定（Git、VS Code、Python、Google 工具）</li>
+                <li>地震資料平台介紹（IRIS、USGS、中央氣象署）</li>
+                <li>AI/Agent 工具介紹（opencode、Antigravity CLI、Hermes agent）</li>
+            </ol>
+
+            <h3>📝 學習步驟</h3>
+            <ol>
+                <li><strong>聽講</strong>：專心聽講師解說課程架構和工具使用方法</li>
+                <li><strong>註冊帳號</strong>：
+                    <ul>
+                        <li>Google（Drive、Sheets、Form、GAS）</li>
+                        <li>GitHub</li>
+                        <li>Hugging Face</li>
+                        <li>Vercel</li>
+                    </ul>
+                </li>
+                <li><strong>安裝軟體</strong>：
+                    <ul>
+                        <li>Git</li>
+                        <li>VS Code</li>
+                        <li>Python 3.10+</li>
+                    </ul>
+                </li>
+                <li><strong>測試工具</strong>：
+                    <ul>
+                        <li>在 GitHub 上建立一個新的 repository（命名為 <code>earth-science-course</code>）</li>
+                        <li>在 Google Drive 建立一個資料夾（命名為 <code>地震課程</code>）</li>
+                        <li>在 Hugging Face 上建立一個新的 dataset（可選）</li>
+                        <li>在 Vercel 上部署一個簡單的靜態網頁（可選）</li>
+                    </ul>
+                </li>
+                <li><strong>探索 IRIS</strong>：
+                    <ul>
+                        <li>瀏覽 <a href="https://www.iris.edu/hq/retm">IRIS 地震教學資源</a></li>
+                        <li>下載 1-2 個地震波形資料（如 <a href="https://www.iris.edu/hq/retm/event/276">2011 年日本 9.0 地震</a>）</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>🏆 作業 1：完成個人作業工具</h3>
+            <div class="info-box tip">
+                <h4>✨ 通過標準</h4>
+                <p><strong>內容</strong>：
+                    <ul>
+                        <li>Google Drive 資料夾截圖（包含 <code>地震課程</code> 資料夾）</li>
+                        <li>GitHub repository 連結（包含 README.md）</li>
+                        <li>Hugging Face 個人頁面截圖（可選）</li>
+                        <li>Vercel 部署頁面截圖（可選）</li>
+                        <li>GAS 測試程式碼（簡單的 <code>Hello World</code>）</li>
+                        <li>環境設定截圖（Git、VS Code、Python 版本）</li>
+                        <li>100-200 字個人學習目標（存成 <code>學習目標.md</code>）</li>
+                    </ul>
+                </p>
+                <p><strong>提交方式</strong>：上傳至 Google Drive 或 GitHub</p>
+                <p><strong>通過標準</strong>：至少完成 5 項（包含前 3 項）</p>
+            </div>
+
+            <h3>💡 學習建議</h3>
+            <div class="info-box success">
+                <h4>🌱 新手</h4>
+                <p>優先完成 GitHub 和 Google Drive 的設定，這是後續作業的基礎</p>
+            </div>
+            <div class="info-box warning">
+                <h4>🚀 進階</h4>
+                <p>嘗試在 Vercel 上部署一個簡單的 HTML 網頁（如個人簡介頁）</p>
+            </div>
+            <p><strong>工具</strong>：
+                <ul>
+                    <li><a href="https://git-scm.com/book/zh-tw/v2/%E9%96%8B%E5%A7%8B-%E5%AE%8C%E6%95%B4%E5%85%A5%E9%96%80">Git 入門教學</a></li>
+                    <li><a href="https://code.visualstudio.com/docs/introvideos/basics">VS Code 使用教學</a></li>
+                    <li><a href="https://www.iris.edu/hq/retm/software">IRIS 地震資料教學</a></li>
+                </ul>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Week 2 -->
+        <section id="week2" class="content-section">
+            <div class="week-card">
+                <h2>📅 Week 2：地震波、加速度、地震與震度</h2>
+                <div class="week-meta">
+                    <span>📅 日期：2026/7/24</span>
+                    <span>🎯 目標：學會使用簡易工具進行地震觀測，理解地震波和震度的概念</span>
+                </div>
+            </div>
+
+            <h3>🎯 重點內容</h3>
+            <ol>
+                <li>地震波的基本概念（P 波、S 波、面波）</li>
+                <li>加速度與地震強度的關係</li>
+                <li>震度的定義和計算方法</li>
+                <li>簡易地震觀測工具介紹（手機、感測器、筆電）</li>
+            </ol>
+
+            <h3>📝 學習步驟</h3>
+            <ol>
+                <li><strong>理論學習</strong>：
+                    <ul>
+                        <li>閱讀 <a href="https://www.iris.edu/hq/inclass/fact-sheet/seismic_waves">地震波介紹</a></li>
+                        <li>觀看 <a href="https://www.iris.edu/hq/inclass/animation/seismic_waves_and_earths_interior">地震波動畫</a></li>
+                    </ul>
+                </li>
+                <li><strong>工具準備</strong>：
+                    <ul>
+                        <li><strong>手機</strong>：安裝地震感測 APP（如 <a href="https://myshake.berkeley.edu/">MyShake</a> 或 <a href="https://play.google.com/store/apps/details?id=com.artemisin.seismo">Seismo</a>）</li>
+                        <li><strong>筆電</strong>：測試內建加速度感測器（部分筆電有內建）</li>
+                        <li><strong>USB 感測器</strong>：若有，連接並測試</li>
+                    </ul>
+                </li>
+                <li><strong>實作練習</strong>：
+                    <ul>
+                        <li>使用手機或感測器錄製「敲擊桌面」的振動（模擬地震）</li>
+                        <li>使用 <a href="https://phyphox.org/">Phyphox</a>（手機物理實驗 APP）錄製加速度資料</li>
+                    </ul>
+                </li>
+                <li><strong>資料分析</strong>：
+                    <ul>
+                        <li>將錄製的資料匯出為 CSV 檔案</li>
+                        <li>在 Google Sheets 中繪製加速度-時間圖</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>🏆 作業 2：完成簡易地震觀測活動</h3>
+            <div class="info-box tip">
+                <h4>✨ 通過標準</h4>
+                <p><strong>內容</strong>：
+                    <ul>
+                        <li>一張手機或感測器地震觀測截圖（顯示振動波形）</li>
+                        <li>一張 Google Sheets 圖表（顯示加速度-時間變化）</li>
+                        <li>一份 200 字教師解說（解釋如何用這個活動教學）</li>
+                        <li>3 題學生問題（用於引導學生思考地震波）</li>
+                    </ul>
+                </p>
+                <p><strong>提交方式</strong>：上傳至 Google Drive 或 GitHub</p>
+                <p><strong>通過標準</strong>：至少完成 3 項（包含前 2 項）</p>
+            </div>
+
+            <h3>💡 學習建議</h3>
+            <div class="info-box success">
+                <h4>🌱 新手</h4>
+                <p>使用手機 APP（如 MyShake）錄製振動，這是最簡單的方法</p>
+            </div>
+            <div class="info-box warning">
+                <h4>🚀 進階</h4>
+                <p>嘗試用 Python 分析加速度資料（使用 <code>pandas</code> 和 <code>matplotlib</code>）</p>
+            </div>
+            <p><strong>工具</strong>：
+                <ul>
+                    <li><a href="https://phyphox.org/experiments/">Phyphox 官方教學</a></li>
+                    <li><a href="https://myshake.berkeley.edu/docs/">MyShake 使用說明</a></li>
+                    <li><a href="https://support.google.com/docs/answer/91362?hl=zh-TW">Google Sheets 圖表教學</a></li>
+                </ul>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Week 3 -->
+        <section id="week3" class="content-section">
+            <div class="week-card">
+                <h2>📅 Week 3：P-S 波到時差、旅行時間曲線與震央定位</h2>
+                <div class="week-meta">
+                    <span>📅 日期：2026/7/31</span>
+                    <span>🎯 目標：學會使用 P-S 波到時差推估震央位置</span>
+                </div>
+            </div>
+
+            <h3>🎯 重點內容</h3>
+            <ol>
+                <li>P 波和 S 波的傳播速度差異</li>
+                <li>旅行時間曲線（Travel Time Curve）的概念</li>
+                <li>P-S 波到時差的計算方法</li>
+                <li>震央定位的基本原理（三角測量）</li>
+            </ol>
+
+            <h3>📝 學習步驟</h3>
+            <ol>
+                <li><strong>理論學習</strong>：
+                    <ul>
+                        <li>閱讀 <a href="https://www.iris.edu/hq/inclass/fact-sheet/how_do_we_know_where_an_earthquake_originated">P-S 波到時差介紹</a></li>
+                        <li>觀看 <a href="https://www.iris.edu/hq/inclass/animation/locating_an_earthquake">震央定位動畫</a></li>
+                    </ul>
+                </li>
+                <li><strong>資料下載</strong>：
+                    <ul>
+                        <li>從 <a href="https://www.iris.edu/hq/retm">IRIS</a> 下載 <strong>1 個地震站的 3 分量地震波形資料</strong>（如 <a href="https://www.iris.edu/hq/retm/event/1456">2016 年高雄美濃地震</a>）</li>
+                    </ul>
+                </li>
+                <li><strong>實作練習</strong>：
+                    <ul>
+                        <li>使用 <a href="https://www.audacityteam.org/">Audacity</a> 或 <a href="https://docs.obspy.org/">ObsPy</a> 打開地震波形資料</li>
+                        <li>手動標記 P 波和 S 波的到時</li>
+                        <li>計算 P-S 波到時差</li>
+                    </ul>
+                </li>
+                <li><strong>震央定位</strong>：
+                    <ul>
+                        <li>使用 <a href="https://www.iris.edu/hq/retm/software-and-services">IRIS 的震央定位工具</a></li>
+                        <li>或手動使用旅行時間曲線推估震央距離</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>🏆 作業 3：完成震央定位教學範例</h3>
+            <div class="info-box tip">
+                <h4>✨ 通過標準</h4>
+                <p><strong>內容</strong>：
+                    <ul>
+                        <li>3 個地震站的 P 波和 S 波到時表格</li>
+                        <li>P-S 波到時差計算表</li>
+                        <li>震央位置推估結果（可用 Google Maps 標記）</li>
+                        <li>GitHub 或 Google Sheets 連結（包含上述資料）</li>
+                        <li>一份教師提問單（3-5 題問題，用於引導學生）</li>
+                    </ul>
+                </p>
+                <p><strong>提交方式</strong>：上傳至 GitHub 或 Google Drive</p>
+                <p><strong>通過標準</strong>：至少完成 4 項（包含前 3 項）</p>
+            </div>
+
+            <h3>💡 學習建議</h3>
+            <div class="info-box success">
+                <h4>🌱 新手</h4>
+                <p>使用 IRIS 的線上工具（如 <a href="https://www.iris.edu/hq/retm/software-and-services/jbr">JBR</a>）進行震央定位</p>
+            </div>
+            <div class="info-box warning">
+                <h4>🚀 進階</h4>
+                <p>用 Python + ObsPy 寫一個簡單的震央定位程式</p>
+            </div>
+            <p><strong>工具</strong>：
+                <ul>
+                    <li><a href="https://www.iris.edu/hq/retm/software-and-services/jbr">IRIS JBR 工具</a></li>
+                    <li><a href="https://docs.obspy.org/tutorial/code_snippets/first-steps.html">ObsPy 入門教學</a></li>
+                    <li><a href="https://www.iris.edu/hq/retm/software-and-services/travel_time_calculator">旅行時間曲線計算器</a></li>
+                </ul>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Week 4 -->
+        <section id="week4" class="content-section">
+            <div class="week-card">
+                <h2>📅 Week 4：課本第 4 章精讀與真實地震波形資料</h2>
+                <div class="week-meta">
+                    <span>📅 日期：2026/8/07</span>
+                    <span>🎯 目標：深入理解地震波形資料，學會使用專業工具分析</span>
+                </div>
+            </div>
+
+            <h3>🎯 重點內容</h3>
+            <ol>
+                <li>課本第 4 章重點整理（地震波形、頻譜分析、地震能量）</li>
+                <li>真實地震波形資料的特徵</li>
+                <li>地震波形分析工具介紹（jAmaSeis、ObsPy、Sac）</li>
+            </ol>
+
+            <h3>📝 學習步驟</h3>
+            <ol>
+                <li><strong>閱讀課本</strong>：
+                    <ul>
+                        <li>精讀課本第 4 章（重點：地震波形、頻譜、能量）</li>
+                        <li>做筆記：整理 10 個重點名詞和概念</li>
+                    </ul>
+                </li>
+                <li><strong>資料下載</strong>：
+                    <ul>
+                        <li>從 <a href="https://www.iris.edu/hq/retm">IRIS</a> 或 <a href="https://earthquake.usgs.gov/">USGS</a> 下載 <strong>3 個不同地震的波形資料</strong></li>
+                    </ul>
+                </li>
+                <li><strong>工具安裝</strong>：
+                    <ul>
+                        <li>安裝 <a href="https://www.iris.edu/hq/retm/software-and-services/jamaseis">jAmaSeis</a>（Windows）</li>
+                        <li>或安裝 <a href="https://ds.iris.edu/files/sac/">Sac</a>（Linux/macOS）</li>
+                    </ul>
+                </li>
+                <li><strong>實作練習</strong>：
+                    <ul>
+                        <li>使用 jAmaSeis 打開地震波形資料</li>
+                        <li>進行頻譜分析（FFT）</li>
+                        <li>比較不同地震的波形特徵</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>🏆 作業 4：完成第 4 章導讀與波形分析小報告</h3>
+            <div class="info-box tip">
+                <h4>✨ 通過標準</h4>
+                <p><strong>內容</strong>：
+                    <ul>
+                        <li>一段 200 字的第 4 章導讀（用自己的話解釋重點）</li>
+                        <li>一張真實地震波形圖（可用 jAmaSeis 或 ObsPy 產生）</li>
+                        <li>一張頻譜分析圖（FFT 結果）</li>
+                        <li>3 個地震波形特徵比較（如振幅、頻率、持續時間）</li>
+                        <li>200 字教學應用說明（如何在課堂上使用這些資料）</li>
+                    </ul>
+                </p>
+                <p><strong>提交方式</strong>：上傳至 GitHub 或 Google Drive</p>
+                <p><strong>通過標準</strong>：至少完成 4 項（包含前 3 項）</p>
+            </div>
+
+            <h3>💡 學習建議</h3>
+            <div class="info-box success">
+                <h4>🌱 新手</h4>
+                <p>使用 jAmaSeis（圖形化介面，易於上手）</p>
+            </div>
+            <div class="info-box warning">
+                <h4>🚀 進階</h4>
+                <p>用 Python + ObsPy 寫一個波形分析腳本</p>
+            </div>
+            <p><strong>工具</strong>：
+                <ul>
+                    <li><a href="https://www.iris.edu/hq/retm/software-and-services/jamaseis">jAmaSeis 使用教學</a></li>
+                    <li><a href="https://docs.obspy.org/tutorial/code_snippets/seismology.html">ObsPy 波形分析教學</a></li>
+                    <li><a href="https://ds.iris.edu/files/sac/manual/">Sac 入門教學</a></li>
+                </ul>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Week 5 -->
+        <section id="week5" class="content-section">
+            <div class="week-card">
+                <h2>📅 Week 5：地震災害與防災教育</h2>
+                <div class="week-meta">
+                    <span>📅 日期：2026/8/14</span>
+                    <span>🎯 目標：設計一個 40 分鐘的防災教育活動</span>
+                </div>
+            </div>
+
+            <h3>🎯 重點內容</h3>
+            <ol>
+                <li>地震災害的類型和影響</li>
+                <li>防災教育的重要性</li>
+                <li>如何設計有效的防災教育活動</li>
+                <li>結合前 4 週內容，設計教學活動</li>
+            </ol>
+
+            <h3>📝 學習步驟</h3>
+            <ol>
+                <li><strong>理論學習</strong>：
+                    <ul>
+                        <li>閱讀 <a href="https://www.iris.edu/hq/inclass/fact-sheet/earthquake_hazards">地震災害介紹</a></li>
+                        <li>觀看防災教育影片（可自行搜尋）</li>
+                    </ul>
+                </li>
+                <li><strong>案例分析</strong>：
+                    <ul>
+                        <li>分析 1-2 個歷史地震災害案例（如 921 大地震、2016 美濃地震）</li>
+                        <li>總結災害原因和防災措施</li>
+                    </ul>
+                </li>
+                <li><strong>活動設計</strong>：
+                    <ul>
+                        <li>結合 Week 1-4 的內容，設計一個 <strong>40 分鐘的防災教育活動</strong></li>
+                        <li>活動內容可包括：
+                            <ul>
+                                <li>地震波形觀測（Week 2）</li>
+                                <li>震央定位遊戲（Week 3）</li>
+                                <li>波形分析實作（Week 4）</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>教案撰寫</strong>：
+                    <ul>
+                        <li>使用教案模板（可自行設計）</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>🏆 作業 5：完成防災教育教案設計</h3>
+            <div class="info-box tip">
+                <h4>✨ 通過標準</h4>
+                <p><strong>內容</strong>：
+                    <ul>
+                        <li>一份 40 分鐘防災教育教案（包含：
+                            <ul>
+                                <li>教學目標</li>
+                                <li>教學活動（分階段，每階段 5-10 分鐘）</li>
+                                <li>所需材料和工具</li>
+                                <li>評量方式</li>
+                                <li>參考資源</li>
+                            </ul>
+                        </li>
+                        <li>一份教學簡報（PPT 或 Google Slides，至少 10 頁）</li>
+                        <li>一份學生工作紙（可選）</li>
+                    </ul>
+                </p>
+                <p><strong>提交方式</strong>：上傳至 GitHub 或 Google Drive</p>
+                <p><strong>通過標準</strong>：教案完整，包含至少 3 個教學活動</p>
+            </div>
+
+            <h3>💡 學習建議</h3>
+            <div class="info-box success">
+                <h4>🌱 新手</h4>
+                <p>參考現有的防災教育教案（如 <a href="https://www.cwa.gov.tw/V8/C/E/earthquake_knowledge.html">中央氣象署防災教育</a>）</p>
+            </div>
+            <div class="info-box warning">
+                <h4>🚀 進階</h4>
+                <p>設計一個 <strong>互動式的防災教育遊戲</strong>（如地震波形猜謎、震央定位競賽）</p>
+            </div>
+            <p><strong>工具</strong>：
+                <ul>
+                    <li><a href="https://support.google.com/docs/answer/2464088?hl=zh-TW">Google Slides 使用教學</a></li>
+                    <li><a href="https://www.cwa.gov.tw/V8/C/E/earthquake_knowledge.html">防災教育資源</a></li>
+                </ul>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Week 6 -->
+        <section id="week6" class="content-section">
+            <div class="week-card">
+                <h2>📅 Week 6：總結與成果展示</h2>
+                <div class="week-meta">
+                    <span>📅 日期：2026/8/21</span>
+                    <span>🎯 目標：完成並展示一份可帶回學校使用的地震教學作品</span>
+                </div>
+            </div>
+
+            <h3>🎯 重點內容</h3>
+            <ol>
+                <li>6 週課程內容回顧</li>
+                <li>成果展示和分享</li>
+                <li>經驗交流和反饋</li>
+                <li>後續學習建議</li>
+            </ol>
+
+            <h3>📝 學習步驟</h3>
+            <ol>
+                <li><strong>回顧整理</strong>：
+                    <ul>
+                        <li>整理 6 週的學習筆記和作業</li>
+                        <li>總結自己在課程中的收穫和成長</li>
+                    </ul>
+                </li>
+                <li><strong>成果整合</strong>：
+                    <ul>
+                        <li>將前 5 週的作業整合成一份 <strong>完整的教學作品</strong></li>
+                        <li>可包含：
+                            <ul>
+                                <li>教案（Week 5）</li>
+                                <li>地震觀測活動（Week 2）</li>
+                                <li>震央定位範例（Week 3）</li>
+                                <li>波形分析工具（Week 4）</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>展示準備</strong>：
+                    <ul>
+                        <li>準備一份 <strong>5-10 分鐘的成果展示</strong></li>
+                        <li>可使用 PPT、網頁、或實際演示</li>
+                    </ul>
+                </li>
+                <li><strong>反饋交流</strong>：
+                    <ul>
+                        <li>聽取其他學員的成果展示</li>
+                        <li>提出問題和建議</li>
+                    </ul>
+                </li>
+            </ol>
+
+            <h3>🏆 作業 6：完成教學作品展示</h3>
+            <div class="info-box tip">
+                <h4>✨ 通過標準</h4>
+                <p><strong>內容</strong>：
+                    <ul>
+                        <li>一份完整的地震教學作品（可包含：
+                            <ul>
+                                <li>教案</li>
+                                <li>活動設計</li>
+                                <li>工具使用說明</li>
+                                <li>學生工作紙</li>
+                                <li>評量方式</li>
+                            </ul>
+                        </li>
+                        <li>一份成果展示簡報（PPT 或 Google Slides）</li>
+                        <li>一段 5-10 分鐘的展示錄影（可選）</li>
+                    </ul>
+                </p>
+                <p><strong>提交方式</strong>：上傳至 GitHub 或 Google Drive</p>
+                <p><strong>通過標準</strong>：教學作品完整，可直接在學校使用</p>
+            </div>
+
+            <h3>💡 學習建議</h3>
+            <div class="info-box success">
+                <h4>🌱 新手</h4>
+                <p>將前 5 週的作業整合成一份教案，並加上使用說明</p>
+            </div>
+            <div class="info-box warning">
+                <h4>🚀 進階</h4>
+                <p>製作一個 <strong>互動式網頁</strong>（如使用 GitHub Pages 或 Vercel）展示教學作品</p>
+            </div>
+            <p><strong>工具</strong>：
+                <ul>
+                    <li><a href="https://pages.github.com/">GitHub Pages 部署教學</a></li>
+                    <li><a href="https://vercel.com/docs">Vercel 部署教學</a></li>
+                </ul>
+            </p>
+        </section>
+
+        <hr>
+
+        <!-- Learning Methods -->
+        <section id="methods" class="content-section">
+            <h2>🎯 學習方法建議</h2>
+
+            <h3>📌 一般建議</h3>
+            <ol>
+                <li><strong>提前預習</strong>：每週課前花 1-2 小時閱讀相關資料，了解基本概念</li>
+                <li><strong>積極實作</strong>：課堂中盡量跟著講師操作，不要只聽不做</li>
+                <li><strong>做筆記</strong>：記錄重點概念、工具使用方法、和自己的疑問</li>
+                <li><strong>互相討論</strong>：與其他學員交流，分享經驗和心得</li>
+                <li><strong>及時完成作業</strong>：每週作業盡量在課後 1-2 天內完成，避免累積</li>
+            </ol>
+
+            <h3>📌 工具學習建議</h3>
+            <p>以下是工具的學習優先順序和建議學習時間：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>工具</th>
+                        <th>學習優先順序</th>
+                        <th>建議學習時間</th>
+                        <th>學習資源</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Git / GitHub</td>
+                        <td>⭐⭐⭐⭐⭐</td>
+                        <td>2-3 小時</td>
+                        <td><a href="https://git-scm.com/book/zh-tw/v2">Git 入門</a></td>
+                    </tr>
+                    <tr>
+                        <td>Google Drive / Sheets</td>
+                        <td>⭐⭐⭐⭐</td>
+                        <td>1-2 小時</td>
+                        <td><a href="https://support.google.com/docs">Google Sheets 教學</a></td>
+                    </tr>
+                    <tr>
+                        <td>VS Code</td>
+                        <td>⭐⭐⭐⭐</td>
+                        <td>1-2 小時</td>
+                        <td><a href="https://code.visualstudio.com/docs">VS Code 文件</a></td>
+                    </tr>
+                    <tr>
+                        <td>Python</td>
+                        <td>⭐⭐⭐</td>
+                        <td>3-5 小時</td>
+                        <td><a href="https://www.learnpython.org/">Python 入門</a></td>
+                    </tr>
+                    <tr>
+                        <td>ObsPy</td>
+                        <td>⭐⭐</td>
+                        <td>2-3 小時</td>
+                        <td><a href="https://docs.obspy.org/">ObsPy 文件</a></td>
+                    </tr>
+                    <tr>
+                        <td>jAmaSeis</td>
+                        <td>⭐⭐</td>
+                        <td>1-2 小時</td>
+                        <td><a href="https://www.iris.edu/hq/retm/software-and-services/jamaseis">jAmaSeis 教學</a></td>
+                    </tr>
+                    <tr>
+                        <td>Hugging Face</td>
+                        <td>⭐</td>
+                        <td>1 小時</td>
+                        <td><a href="https://huggingface.co/docs">Hugging Face 文件</a></td>
+                    </tr>
+                    <tr>
+                        <td>Vercel</td>
+                        <td>⭐</td>
+                        <td>1 小時</td>
+                        <td><a href="https://vercel.com/docs">Vercel 文件</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>📌 遇到問題怎麼辦？</h3>
+            <ol>
+                <li><strong>查看文件</strong>：大部分工具都有詳細的官方文件，先自己尋找答案</li>
+                <li><strong>Google 搜尋</strong>：用中文或英文搜尋錯誤訊息或問題描述</li>
+                <li><strong>詢問講師</strong>：課堂中或課後透過郵件詢問</li>
+                <li><strong>尋求同學幫助</strong>：其他學員可能也遇過類似的問題</li>
+                <li><strong>使用 AI 工具</strong>：可使用 <a href="https://hermes.ai/">Hermes agent</a> 或 <a href="https://github.com/features/copilot">GitHub Copilot</a> 協助解決程式問題</li>
+            </ol>
+        </section>
+
+        <hr>
+
+        <!-- Schedule -->
+        <section id="schedule" class="content-section">
+            <h2>📅 學習時程規劃（課後）</h2>
+            <p>以下是建議的課後學習時間分配：</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>週次</th>
+                        <th>課堂時間</th>
+                        <th>課後學習時間</th>
+                        <th>重點任務</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Week 1</td>
+                        <td>4 小時</td>
+                        <td>2-3 小時</td>
+                        <td>完成工具設定和作業 1</td>
+                    </tr>
+                    <tr>
+                        <td>Week 2</td>
+                        <td>4 小時</td>
+                        <td>2-3 小時</td>
+                        <td>完成地震觀測活動和作業 2</td>
+                    </tr>
+                    <tr>
+                        <td>Week 3</td>
+                        <td>4 小時</td>
+                        <td>3-4 小時</td>
+                        <td>完成震央定位範例和作業 3</td>
+                    </tr>
+                    <tr>
+                        <td>Week 4</td>
+                        <td>4 小時</td>
+                        <td>3-4 小時</td>
+                        <td>完成波形分析報告和作業 4</td>
+                    </tr>
+                    <tr>
+                        <td>Week 5</td>
+                        <td>4 小時</td>
+                        <td>4-5 小時</td>
+                        <td>完成防災教育教案和作業 5</td>
+                    </tr>
+                    <tr>
+                        <td>Week 6</td>
+                        <td>4 小時</td>
+                        <td>2-3 小時</td>
+                        <td>完成教學作品和作業 6</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><strong>總計</strong></td>
+                        <td><strong>24 小時</strong></td>
+                        <td><strong>17-22 小時</strong></td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" style="text-align: center; background: var(--primary); color: white;"><strong>總學習時間：41-46 小時</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <hr>
+
+        <!-- Resources -->
+        <section id="resources" class="content-section">
+            <h2>📚 參考資源</h2>
+
+            <h3>🌍 地震學資源</h3>
+            <ul>
+                <li><a href="https://www.iris.edu/hq/retm">IRIS 地震教學資源</a></li>
+                <li><a href="https://earthquake.usgs.gov/">USGS 地震資料</a></li>
+                <li><a href="https://www.cwa.gov.tw/V8/C/E/earthquake.html">中央氣象署地震資訊</a></li>
+                <li><a href="https://www.earthquake.tw/">地震百科</a></li>
+            </ul>
+
+            <h3>🛠️ 工具資源</h3>
+            <ul>
+                <li><a href="https://git-scm.com/doc">Git 官方文件</a></li>
+                <li><a href="https://docs.github.com/">GitHub 文件</a></li>
+                <li><a href="https://code.visualstudio.com/docs">VS Code 文件</a></li>
+                <li><a href="https://docs.python.org/3/">Python 官方文件</a></li>
+                <li><a href="https://docs.obspy.org/">ObsPy 文件</a></li>
+                <li><a href="https://www.iris.edu/hq/retm/software-and-services/jamaseis">jAmaSeis 文件</a></li>
+            </ul>
+
+            <h3>🎓 教學資源</h3>
+            <ul>
+                <li><a href="https://www.cwa.gov.tw/V8/C/E/earthquake_knowledge.html">防災教育資源（中央氣象署）</a></li>
+                <li><a href="https://www.naer.edu.tw/">地球科學教學資源（國立教育研究院）</a></li>
+                <li><a href="https://www.nmns.edu.tw/">科學教育資源（國立自然科學博物館）</a></li>
+            </ul>
+        </section>
+
+        <hr>
+
+        <!-- Additional Suggestions -->
+        <section id="suggestions" class="content-section">
+            <h2>💡 額外建議</h2>
+
+            <h3>📌 如何讓學習更有效？</h3>
+            <ol>
+                <li><strong>設定明確目標</strong>：每週開始前，明確這週要學會什麼</li>
+                <li><strong>分解任務</strong>：將大任務分解成小步驟，逐步完成</li>
+                <li><strong>定期回顧</strong>：每週末花 30 分鐘回顧這週的學習內容</li>
+                <li><strong>實際應用</strong>：嘗試在自己的教學中應用所學的內容</li>
+                <li><strong>保持好奇心</strong>：多提問、多探索，不要只停留在表面</li>
+            </ol>
+
+            <h3>📌 如何應用在教學上？</h3>
+            <ol>
+                <li><strong>設計互動活動</strong>：讓學生親自操作地震觀測工具</li>
+                <li><strong>結合真實案例</strong>：使用真實的地震資料，讓學生感受地震的真實性</li>
+                <li><strong>培養科學思維</strong>：引導學生提出問題、設計實驗、分析資料</li>
+                <li><strong>跨領域整合</strong>：結合數學（波形分析）、物理（地震波）、地理（板塊構造）等科目</li>
+                <li><strong>防災教育</strong>：將地震知識轉化為防災能力，提升學生的安全意識</li>
+            </ol>
+        </section>
+
+        <hr>
+
+        <!-- Checklist -->
+        <section id="checklist" class="content-section">
+            <h2>📝 學習檢核清單</h2>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox" id="check-preparation"> <label for="check-preparation">已完成所有軟硬體準備</label></li>
+                    <li><input type="checkbox" id="check-accounts"> <label for="check-accounts">已註冊所有必要的帳號</label></li>
+                    <li><input type="checkbox" id="check-software"> <label for="check-software">已安裝所有必要的軟體</label></li>
+                    <li><input type="checkbox" id="check-week1"> <label for="check-week1">Week 1 作業已完成</label></li>
+                    <li><input type="checkbox" id="check-week2"> <label for="check-week2">Week 2 作業已完成</label></li>
+                    <li><input type="checkbox" id="check-week3"> <label for="check-week3">Week 3 作業已完成</label></li>
+                    <li><input type="checkbox" id="check-week4"> <label for="check-week4">Week 4 作業已完成</label></li>
+                    <li><input type="checkbox" id="check-week5"> <label for="check-week5">Week 5 作業已完成</label></li>
+                    <li><input type="checkbox" id="check-week6"> <label for="check-week6">Week 6 作業已完成</label></li>
+                    <li><input type="checkbox" id="check-notes"> <label for="check-notes">已整理 6 週的學習筆記</label></li>
+                    <li><input type="checkbox" id="check-final"> <label for="check-final">已完成一份可帶回學校的教學作品</label></li>
+                </ul>
+            </div>
+        </section>
+
+        <hr>
+
+        <!-- Conclusion -->
+        <section class="content-section">
+            <h2>🎉 結語</h2>
+            <p>這門課程不僅讓你學會地震學的基礎知識，更能讓你掌握 <strong>真實地震資料的分析能力</strong> 和 <strong>防災教育的教學設計能力</strong>。透過 6 週的學習，你將能夠：</p>
+            <ul>
+                <li>✅ 理解地震的基本原理和觀測方法</li>
+                <li>✅ 使用專業工具分析地震波形資料</li>
+                <li>✅ 設計有效的防災教育活動</li>
+                <li>✅ 將所學應用在自己的教學中</li>
+            </ul>
+            <div class="info-box success">
+                <h4>加油！</h4>
+                <p>相信你能在這門課程中收穫滿滿，並將這些知識和技能帶回學校，影響更多學生。</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin: 40px 0; color: var(--text-light); font-size: 0.9rem;">
+            <p><strong>最後更新</strong>：2025/07/17 | <strong>作者</strong>：Vibe Code（基於課程內容整理） | <strong>版本</strong>：1.0</p>
+            <p><a href="學習指引.md" class="btn btn-secondary">下載 Markdown 版本</a></p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        ↑ 回到頂部
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top functionality
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.getElementById('scrollTop');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('visible');
+            } else {
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Checkbox persistence (save to localStorage)
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            const id = checkbox.id;
+            if (id) {
+                const saved = localStorage.getItem(id);
+                if (saved === 'true') {
+                    checkbox.checked = true;
+                }
+                checkbox.addEventListener('change', function() {
+                    localStorage.setItem(id, this.checked);
+                });
+            }
+        });
+
+        // Highlight current section in TOC
+        window.addEventListener('scroll', function() {
+            const sections = document.querySelectorAll('section[id]');
+            const tocLinks = document.querySelectorAll('.toc a[href^="#"]');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            tocLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
